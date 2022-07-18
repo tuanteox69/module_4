@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Demo_SpringMvc_C0322g1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/customer-management" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/demo_UploadFile_C0322g1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring-time-zone-gradle-develop" vcs="Git" />
   </component>
 </project>
