@@ -1,4 +1,4 @@
-package com.example.springemailvalidation;
+package com.example.quanly_khachhang;
 
 import java.io.*;
 import javax.servlet.http.*;

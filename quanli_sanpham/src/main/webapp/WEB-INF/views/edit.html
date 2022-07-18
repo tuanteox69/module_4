@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/edit" method="post">
+    <div class="container">
+        <h2>Striped Rows</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr><th>id </th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Img</th>
+                <th>Category</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr >
+                <td><input readonly name="idP"  th:value="${products.getIdP()}"></td>
+                <td><input name="nameP"  th:value="${products.getNameP()}"></td>
+                <td><input name="price"  th:value="${products.getPriceP()}"></td>
+                <td><input name="imgP"  th:value="${products.getImgP()}"></td>
+                <td><select name="category">
+                    <option th:each="c : ${categories}" th:value="${c.getId()}" th:text="${c.getName()}" th:selected="${c.getId() == products.getCategory().getId()}"></option>
+                </select></td>
+                <td><select name="status">
+                    <option th:each="c : ${statusT}" th:value="${c}" th:text="${c}" th:selected="${c == products.isStatus()}"></option>
+                </select></td>
+            </tr>
+
+            <button class="btn btn-success" type="submit">update</button>
+
+            </tbody>
+        </table>
+    </div>
+</form>
+</body>
+</html>

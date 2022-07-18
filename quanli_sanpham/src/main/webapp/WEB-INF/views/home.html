@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="/create"><button>Add product</button></a>
+</div>
+<table border="1px">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Img</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c:${products}">
+        <td th:text="${c.getIdP()}"></td>
+        <td th:text="${c.getNameP()}"></td>
+        <td><img style="width: 100px;height: 150px" th:src="${c.getImgP()}" alt=""></td>
+        <td th:text="${c.getPriceP()}"></td>
+        <td th:text="${c.getCategory().getName()}"></td>
+        <td th:text="${c.isStatus()?'Con hang' : 'het hang'}"></td>
+        <td><a th:href="@{/edit/{id}(id=${c.getIdP()})}"><button>Edit</button></a></td>
+        <td><a th:href="@{/delete/{id}(id=${c.getIdP()})}"><button>Delete</button></a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

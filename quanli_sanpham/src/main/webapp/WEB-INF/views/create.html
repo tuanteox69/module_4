@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new customer</title>
+
+</head>
+<body>
+<h1>Create new customer</h1>
+
+<p>
+    <a href="/home">Back to Product list</a>
+</p>
+<form action="/create" method="post">
+    <fieldset>
+        <legend>Product information</legend>
+        <table>
+            <tr >
+
+                <td><input hidden type="text" name="idP" th:value="${products.size()+1}"></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="nameP"></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <td>Img:</td>
+                <td><input type="text" name="imgP"></td>
+            </tr>
+            <tr><td>Category:</td>
+                <td><select name="category" >
+                    <option th:each="c : ${categories}" th:value="${c.getId()}" th:text="${c.getName()}"></option>
+                </select></td>
+
+        </table>
+    </fieldset>
+<button type="submit">Save</button>
+</form>
+</body>
+</html>
